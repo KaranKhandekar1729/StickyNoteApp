@@ -1,6 +1,12 @@
 
 const createNote = document.querySelector('.add-note')
 
+let activeNote;
+
+const setActiveNote = (note) => {
+    activeNote = note;
+}
+
 createNote.addEventListener('click', () => {
     const note = document.createElement('div')
     note.innerHTML = `
@@ -11,18 +17,18 @@ createNote.addEventListener('click', () => {
                     </div>
                     `
 
-
     document.body.appendChild(note)
 
     note.classList.add('note')
 
     activeNote = note;
 
-    note.querySelector('.note-header').addEventListener('mousedown', mouseDown)
+    note.querySelector('.note-header').addEventListener('mousedown', mouseDown);
 
-    // Changing the Color for the selected note
+    note.addEventListener('click', () => (
+        setActiveNote(note)
+    ))
 
-    note.addEventListener('click', changeColor)
 
     // Deleting the note
 
