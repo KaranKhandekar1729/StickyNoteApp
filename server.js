@@ -1,8 +1,11 @@
 const express = require('express');
 const cors = require('cors');
 const pool = require('./config/database.js'); // database connection
-
+const path = require('path');
 const app = express();
+
+app.use(express.static(path.join(__dirname, 'public')));
+
 const PORT = 3000;
 
 // --- Middleware ---
