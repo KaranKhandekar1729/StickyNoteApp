@@ -83,7 +83,7 @@ function createNoteElement(id, text, posX, posY, color) {
     note.innerHTML = `
         <div class="note-header">
             <div class="delete">
-                <img src="/images/x-mark.png" alt="delete icon">
+                <img src="images/x-mark.png" alt="delete icon">
             </div>
         </div>
         <div class="text-area">
